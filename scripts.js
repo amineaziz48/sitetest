@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier - Mia ART</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Mia ART</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="achat.html">Achat</a></li>
-                <li><a href="panier.html">Panier</a></li>
-                <li><a href="contact.html">Contactez-nous</a></li>
-                <li><a href="profil.html">Profil</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="panier">
-            <h2>Panier</h2>
-            <div id="cart-items"></div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Mia ART. Tous droits réservés.</p>
-    </footer>
-    <script src="scripts.js"></script>
-    <script>
+function addToCart() {
+    // Récupération des valeurs du formulaire
+    const form = document.getElementById('product-form');
+    const formData = new FormData(form);
+
+    const cartItem = {
+        name: 'Cadre Personnalisé 45x50cm',
+        price: 45,
+        backgroundColor: formData.get('background-color'),
+        textColor: formData.get('text-color'),
+        fontFamily: formData.get('font-family')
+    };
+
+    // Récupération du panier actuel depuis le Local Storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Ajout du nouvel article au panier
+    cart.push(cartItem);
+
+    // Sauvegarde du panier mis à jour dans le Local Storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Confirmation pour l'utilisateur
+    alert('Produit ajouté au panier!');
+}
         // Fonction pour afficher les articles du panier avec les boutons de suppression
         function displayCart() {
             const cartItemsContainer = document.getElementById('cart-items');
@@ -65,8 +58,22 @@
             displayCart(); // Met à jour l'affichage
         }
 
-        // Appel de la fonction d'affichage au chargement de la page
-        displayCart();
-    </script>
-</body>
-</html>
+
+function addToCart() {
+    const form = document.getElementById('product-form');
+    const formData = new FormData(form);
+
+    const cartItem = {
+        name: 'Cadre Personnalisé 45x50cm',
+        price: 45,
+        backgroundColor: formData.get('background-color'),
+        textColor: formData.get('text-color'),
+        fontFamily: formData.get('font-family')
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Produit ajouté au panier!');
+}

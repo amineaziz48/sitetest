@@ -22,11 +22,38 @@
     <main>
         <section id="achat">
             <h2>Achat</h2>
-            <p>Explorez et achetez nos dernières créations.</p>
+            <article class="product">
+                <h3>Cadre Personnalisé 45x50cm</h3>
+                <img src="cadre-personnalise.jpg" alt="Cadre Personnalisé" class="product-image">
+                <p>Prix : 45 €</p>
+                <p>Personnalisez votre cadre selon vos préférences :</p>
+                <form id="product-form" class="product-form">
+                    <fieldset>
+                        <legend>Couleur du Fond :</legend>
+                        <label><input type="radio" name="background-color" value="blanc" checked> Blanc</label><br>
+                        <label><input type="radio" name="background-color" value="dore"> Doré</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Couleur de l'Écriture :</legend>
+                        <label><input type="radio" name="text-color" value="blanc" checked> Blanc</label><br>
+                        <label><input type="radio" name="text-color" value="dore"> Doré</label><br>
+                        <label><input type="radio" name="text-color" value="noir"> Noir</label><br>
+                        <label><input type="radio" name="text-color" value="bleu"> Bleu</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Police d'Écriture :</legend>
+                        <label><input type="radio" name="font-family" value="arial" checked> Arial</label><br>
+                        <label><input type="radio" name="font-family" value="times"> Times New Roman</label><br>
+                        <label><input type="radio" name="font-family" value="courier"> Courier New</label>
+                    </fieldset>
+                    <button type="button" onclick="addToCart()">Ajouter au Panier</button>
+                </form>
+            </article>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Mia ART. Tous droits réservés.</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
