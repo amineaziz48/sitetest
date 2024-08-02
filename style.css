@@ -43,14 +43,6 @@ main {
     padding: 20px;
 }
 
-section {
-    margin-bottom: 20px;
-}
-
-section h2 {
-    color: #4CAF50;
-}
-
 /* Pied de page */
 footer {
     background-color: #333;
